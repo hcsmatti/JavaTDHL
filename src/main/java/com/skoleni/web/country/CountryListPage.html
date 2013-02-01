@@ -13,12 +13,16 @@
                     <tr>
                         <th>Id</th>
                         <th>Name</th>
+                        <th>&nbsp;</th>
                     </tr>
                 </thead>
                 <tbody >
                     <tr wicket:id="rows">
-                        <td wicket:id="id"></td>
-                        <td wicket:id="name"></td>
+                        <td wicket:id="id">[id]</td>
+                        <td wicket:id="name">[name]</td>
+                        <td>
+                            <button wicket:id="editLink">edit</button>
+                        </td>
                     </tr>
                 </tbody>
                 <tfoot>
