@@ -7,5 +7,7 @@ import java.util.List;
 public interface UserRepository extends Repository<UserEntity> {
 
     List<UserEntity> listFromCountry(CountryEntity country);
+    
+    
 
  }

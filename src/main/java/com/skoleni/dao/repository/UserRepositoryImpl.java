@@ -14,4 +14,6 @@ public class UserRepositoryImpl extends RepositoryBase<UserEntity> implements Us
         query.setParameter("name", country.getName());
         return query.list();
     }
+
+    
 }

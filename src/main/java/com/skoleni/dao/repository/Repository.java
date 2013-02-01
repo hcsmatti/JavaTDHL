@@ -12,4 +12,6 @@ public interface Repository<T extends Serializable> {
     List<T> list(Class<T> clazz);
 
     void saveOrUpdate(T entity);
+    
+    int getSize(List<T> list);
 }

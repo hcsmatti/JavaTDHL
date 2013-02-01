@@ -1,5 +1,6 @@
 package com.skoleni.dao.repository;
 
+import com.skoleni.dao.entity.UserEntity;
 import java.io.Serializable;
 import java.util.List;
 import org.hibernate.Criteria;
@@ -41,4 +42,5 @@ public abstract class RepositoryBase<T extends Serializable> implements Reposito
         final Criteria criteria = getSession().createCriteria(clazz);
         return criteria.list();
     }
+    
 }
