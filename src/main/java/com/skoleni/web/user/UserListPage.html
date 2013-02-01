@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns:wicket="http://wicket.apache.org">
+    <body>
+        <wicket:extend>
+            <wicket:link>
+                <a href="user">New User</a>
+            </wicket:link>
+
+            <table wicket:id="data">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>First name</th>
+                        <th>Last name</th>
+                    </tr>
+                </thead>
+                <tbody >
+                    <tr wicket:id="rows">
+                        <td wicket:id="id"></td>
+                        <td wicket:id="firstName"></td>
+                        <td wicket:id="lastName"></td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td wicket:id="navigator"></td>
+                    </tr>
+                </tfoot>
+            </table>
+        </wicket:extend>
+    </body>
+</html>

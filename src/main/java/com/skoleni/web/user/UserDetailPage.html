@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns:wicket="http://wicket.apache.org">
+    <body>
+        <wicket:extend>
+            <form wicket:id="form">
+                <div wicket:id="idContainer">
+                    <label wicket:id="idLabel">[idLabel]</label>
+                    <input type="text" wicket:id="id" /><br />
+                </div>
+
+                <label wicket:id="firstNameLabel">[firstNameLabel]</label>
+                <input type="text" wicket:id="firstName" /><br />
+
+                <label wicket:id="lastNameLabel">[lastNameLabel]</label>
+                <input type="text" wicket:id="lastName" /><br />
+
+                <label wicket:id="systemUserLabel">[systemUserLabel]</label>
+                <input type="checkbox" wicket:id="systemUser" /><br />
+
+                <div wicket:id="passwordContainer">
+                    <label wicket:id="passwordLabel">[passwordLabel]</label>
+                    <input type="password" wicket:id="password" /><br />
+                </div>
+
+                <div wicket:id="countryPanel" /><br />
+
+                <input type="submit" wicket:id="submitButton" wicket:message="value:submitButton" />
+            </form> 
+        </wicket:extend>
+    </body>
+</html>

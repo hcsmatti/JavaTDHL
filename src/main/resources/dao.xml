@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context/spring-context-3.0.xsd"
+       xmlns:tx="http://www.springframework.org/schema/tx/spring-tx-3.0.xsd"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+          http://www.springframework.org/schema/context/spring-context-3.0.xsd http://www.springframework.org/schema/context/spring-context-3.0.xsd/spring-spring-context-3.0.xsd-3.1.1.RELEASE.xsd
+          http://www.springframework.org/schema/tx/spring-tx-3.0.xsd http://www.springframework.org/schema/tx/spring-tx-3.0.xsd/spring-spring-tx-3.0.xsd-3.1.1.RELEASE.xsd">
+
+                    
+    <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+        <property name="driverClassName" value="${db.driverClassName}" />
+        <property name="url" value="${db.url}" />
+        <property name="username" value="${db.username}" />
+        <property name="password" value="${db.password}" />
+    </bean>
+    
+    <bean id="transactionManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+        <property name="sessionFactory" ref="sessionFactory" />
+    </bean>
+    
+    <bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">    
+        <property name="namingStrategy">
+            <bean name="namingStrategy" class="org.hibernate.cfg.ImprovedNamingStrategy" />
+        </property>
+        <property name="dataSource" ref="dataSource" />
+        <property name="packagesToScan" value="com.skoleni.dao.entity." />   <!-- tecka na konci je potreba - spring pripoji **/*.class -->
+        <property name="hibernateProperties">
+            <props>
+                <prop key="hibernate.dialect">${db.hibernate.dialect}</prop>
+                <prop key="hibernate.hbm2ddl.auto">${db.hibernate.hbm2ddl}</prop>
+                <prop key="hibernate.use_sql_comments">true</prop>
+                <prop key="hibernate.show_sql">true</prop>
+                <prop key="hibernate.format_sql">true</prop>
+                <prop key="hibernate.default_schema">${db.hibernate.defaultschema}</prop>              
+            </props>
+        </property>
+    </bean>
+</beans>
